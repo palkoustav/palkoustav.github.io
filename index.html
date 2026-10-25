@@ -25,17 +25,29 @@ footer{background:#071b35!important}.contact{text-align:center;background:linear
 @media(max-width:720px){.hero{padding-top:56px!important}section{padding-top:56px!important;padding-bottom:56px!important}.btns{gap:8px!important}.btn{flex:1 1 auto;text-align:center}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
-<style id="contrast-fix">
-/* Explicit text colors prevent inherited white text on white controls/cards */
-.hero .btn:not(.p), .hero .btn:not(.p):visited { color:#183b73 !important; background:#ffffff !important; }
-.hero .btn.p, .hero .btn.p:visited { color:#ffffff !important; }
-.stats .stat { background:transparent !important; box-shadow:none !important; }
-.stats .stat b { color:#ffffff !important; text-shadow:none !important; }
-.stats .stat span { color:#cbd9ef !important; }
-.card, .pub, .ev { color:#162033 !important; }
-.card h3, .pub h3, .ev h3 { color:#122f59 !important; }
-.card p, .pub p, .ev p, .card li { color:#53647d !important; }
-.contact .btn:not(.p), .contact .btn:not(.p):visited { color:#183b73 !important; }
+
+<style id="theme-fix">
+/* Complete light/dark palette: keeps text readable across every surface. */
+:root{color-scheme:light dark}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#e8eef8;--muted:#aebbd0;--navy:#dbeafe;--blue:#68a0ff;--cyan:#55d5df;--paper:#0b1220;--soft:#101a2d;--line:#263654;--shadow:0 16px 45px rgba(0,0,0,.25)}
+  body{background:#0b1220!important;color:#e8eef8!important}
+  header{background:rgba(10,18,33,.94)!important;border-bottom-color:#263654!important;box-shadow:0 4px 18px rgba(0,0,0,.2)!important}
+  .brand,h1,h2,.card h3,.pub h3,.ev h3{color:#eef5ff!important}
+  .l{color:#b9c7dc!important}.l:hover{color:#7cb0ff!important}
+  .hero{background:linear-gradient(135deg,#0d1930 0%,#121c35 56%,#1a1428 100%)!important}
+  .hero:before{background:radial-gradient(circle,rgba(94,150,255,.16),transparent 66%)!important}
+  .eyebrow,.yr,.dt{color:#76a7ff!important}.role{color:#c6d2e5!important}.lead,.org{color:#aebbd0!important}
+  .hero .btn:not(.p),.hero .btn:not(.p):visited,.contact .btn:not(.p),.contact .btn:not(.p):visited{background:#152238!important;color:#dce8fb!important;border-color:#334969!important}
+  .hero .btn.p,.hero .btn.p:visited{background:linear-gradient(135deg,#315ec5,#4379e8)!important;color:#fff!important;border-color:transparent!important}
+  .stats{background:#08172d!important}.stat b{color:#fff!important}.stat span{color:#b8c8df!important}
+  section{background:#0b1220!important}section.alt{background:#101a2d!important}
+  .card,.pub,.ev{background:#142037!important;border-color:#2b3b59!important;color:#e8eef8!important;box-shadow:0 4px 18px rgba(0,0,0,.16)!important}
+  .card p,.pub p,.ev p,.card li{color:#b8c4d8!important}
+  .tag{background:#1b3157!important;color:#bcd3ff!important;border-color:#31517f!important}
+  .contact{background:linear-gradient(135deg,#111d34,#12262d)!important}
+  footer{background:#060e1c!important;color:#b8c4d8!important}
+}
 </style>
 </head><body id="top">
 <nav id="nav"><div class="in"><a class="brand" href="#top">Koustav Pal</a>
