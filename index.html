@@ -117,9 +117,45 @@ header nav a.l:visited {
 header nav a.l:hover,
 header nav a.l:focus-visible,
 header nav a.l.active {
-  color: #D4145A !important;
+  color: #d4145a !important;
   -webkit-text-fill-color: #d4145a !important;
   opacity: 1 !important;
+}
+</style>
+<style id="nav-root-fix">
+/* IMPORTANT: the menu lives inside #nav, not <header>. */
+#nav a.l,
+#nav a.l:link,
+#nav a.l:visited {
+  color:#7e22ce !important;
+  -webkit-text-fill-color:#7e22ce !important;
+  opacity:1 !important;
+  font-weight:800 !important;
+  text-shadow:none !important;
+}
+#nav a.l:hover,
+#nav a.l:focus-visible,
+#nav a.l.active {
+  color:#e11d48 !important;
+  -webkit-text-fill-color:#e11d48 !important;
+}
+#nav .brand,
+#nav .brand:link,
+#nav .brand:visited {
+  color:#102d57 !important;
+  -webkit-text-fill-color:#102d57 !important;
+  opacity:1 !important;
+}
+#nav #theme,#nav button {
+  color:#7e22ce !important;
+  -webkit-text-fill-color:#7e22ce !important;
+  opacity:1 !important;
+  border-color:#a78bfa !important;
+}
+@media (prefers-color-scheme:dark){
+ #nav a.l,#nav a.l:link,#nav a.l:visited{color:#d8b4fe!important;-webkit-text-fill-color:#d8b4fe!important}
+ #nav a.l:hover,#nav a.l:focus-visible,#nav a.l.active{color:#fb7185!important;-webkit-text-fill-color:#fb7185!important}
+ #nav .brand,#nav .brand:link,#nav .brand:visited{color:#f1f5f9!important;-webkit-text-fill-color:#f1f5f9!important}
 }
 </style>
 </head><body id="top">
