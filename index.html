@@ -25,6 +25,18 @@ footer{background:#071b35!important}.contact{text-align:center;background:linear
 @media(max-width:720px){.hero{padding-top:56px!important}section{padding-top:56px!important;padding-bottom:56px!important}.btns{gap:8px!important}.btn{flex:1 1 auto;text-align:center}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
+<style id="contrast-fix">
+/* Explicit text colors prevent inherited white text on white controls/cards */
+.hero .btn:not(.p), .hero .btn:not(.p):visited { color:#183b73 !important; background:#ffffff !important; }
+.hero .btn.p, .hero .btn.p:visited { color:#ffffff !important; }
+.stats .stat { background:transparent !important; box-shadow:none !important; }
+.stats .stat b { color:#ffffff !important; text-shadow:none !important; }
+.stats .stat span { color:#cbd9ef !important; }
+.card, .pub, .ev { color:#162033 !important; }
+.card h3, .pub h3, .ev h3 { color:#122f59 !important; }
+.card p, .pub p, .ev p, .card li { color:#53647d !important; }
+.contact .btn:not(.p), .contact .btn:not(.p):visited { color:#183b73 !important; }
+</style>
 </head><body id="top">
 <nav id="nav"><div class="in"><a class="brand" href="#top">Koustav Pal</a>
 <a class="l" href="#about">About</a><a class="l" href="#research">Research</a><a class="l" href="#publications">Publications</a><a class="l" href="#experience">Experience</a><a class="l" href="#skills">Skills</a><a class="l" href="#awards">Awards</a><a class="l" href="#contact">Contact</a>
