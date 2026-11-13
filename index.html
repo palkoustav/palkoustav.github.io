@@ -51,7 +51,7 @@
 
 <section id="publications"><div class="wrap"><h2>Publications</h2><div class="bar"></div><p class="sub">Click a title or its DOI button to open the paper on the publisher site. * Corresponding author.</p>
 <div class="filters" id="flt"><button class="on" data-f="all">All</button><button data-f="eb">Exchange bias</button><button data-f="mr">Magnetoresistance</button><button data-f="mce">Magnetocaloric</button><button data-f="magnetism">Magnetism</button><button data-f="2d">2D / optics</button></div>
-<article class="pub reveal" data-cat="mce"><div class="pyr">2026</div><div class="pbody"><h3><a href="https://doi.org/10.1016/j.jmmm.2026.174741" target="_blank" rel="noopener">Magnetic and magnetocaloric study of RFe2Al10 (R = Dy, Gd): Role of Griffiths-phase clustering in DyFe2Al10</a></h3><p class="pa"><b>K. Pal</b>*, S. Ghosh, I. Das</p><p class="pj"><span class="jb">Journal of Magnetism and Magnetic Materials</span> 660, 174741 (2026) <a class="doi" href="https://doi.org/10.1016/j.jmmm.2026.174741" target="_blank" rel="noopener">DOI &#8599;</a></p></div></article>
+<article class="pub reveal" data-cat="mce magnetism"><div class="pyr">2026</div><div class="pbody"><h3><a href="https://doi.org/10.1016/j.jmmm.2026.174741" target="_blank" rel="noopener">Magnetic and magnetocaloric study of RFe2Al10 (R = Dy, Gd): Role of Griffiths-phase clustering in DyFe2Al10</a></h3><p class="pa"><b>K. Pal</b>*, S. Ghosh, I. Das</p><p class="pj"><span class="jb">Journal of Magnetism and Magnetic Materials</span> 660, 174741 (2026) <a class="doi" href="https://doi.org/10.1016/j.jmmm.2026.174741" target="_blank" rel="noopener">DOI &#8599;</a></p></div></article>
 <article class="pub reveal" data-cat="magnetism"><div class="pyr">2026</div><div class="pbody"><h3><a href="https://doi.org/10.1016/j.mseb.2026.119875" target="_blank" rel="noopener">Coexistence of Griffiths phase and superparamagnetic-like behavior in La-doped antiferromagnetic CaMnO3</a></h3><p class="pa"><b>K. Pal</b>*, S. Ghosh, N. N. S. V. Rama Raju, C. Prasad, K. Das, I. Das</p><p class="pj"><span class="jb">Materials Science and Engineering: B</span> 335, 119875 (2026) <a class="doi" href="https://doi.org/10.1016/j.mseb.2026.119875" target="_blank" rel="noopener">DOI &#8599;</a></p></div></article>
 <article class="pub reveal" data-cat="2d"><div class="pyr">2026</div><div class="pbody"><h3><a href="https://doi.org/10.1016/j.optlastec.2026.116592" target="_blank" rel="noopener">Engineering optical coupling strategies for photo-enhanced scanning probe microscopy</a></h3><p class="pa">B. Esmaeilzadeh*, Z. R. Usha, H. Chamkouri, S. Li, <b>K. Pal</b>, D. Wu</p><p class="pj"><span class="jb">Optics &amp; Laser Technology</span> 204, 116592 (2026) <a class="doi" href="https://doi.org/10.1016/j.optlastec.2026.116592" target="_blank" rel="noopener">DOI &#8599;</a></p></div></article>
 <article class="pub reveal" data-cat="2d"><div class="pyr">2026</div><div class="pbody"><h3><a href="https://doi.org/10.3390/photonics13060579" target="_blank" rel="noopener">Stark effect and valley polarization of interlayer excitons in 3° twisted bilayer WSe2</a></h3><p class="pa">H. Zhou*, <b>K. Pal</b></p><p class="pj"><span class="jb">Photonics</span> 13, 579 (2026) <a class="doi" href="https://doi.org/10.3390/photonics13060579" target="_blank" rel="noopener">DOI &#8599;</a></p></div></article>
@@ -81,4 +81,34 @@
 <footer>&copy; <span id="y"></span> Koustav Pal. All rights reserved.</footer>
 <button id="up" aria-label="Back to top">&uarr;</button>
 <script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var flt = document.getElementById('flt');
+  if (!flt) return;
+  var buttons = flt.querySelectorAll('button[data-f]');
+  var pubs = document.querySelectorAll('#publications .pub');
+
+  // Use event delegation with capture so it runs reliably even if script.js has conflicting handlers
+  flt.addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-f]');
+    if (!btn) return;
+    e.stopImmediatePropagation();
+
+    buttons.forEach(function (b) { b.classList.remove('on'); });
+    btn.classList.add('on');
+
+    var cat = btn.getAttribute('data-f');
+    pubs.forEach(function (pub) {
+      var pubCats = (pub.getAttribute('data-cat') || '').trim().split(/\s+/);
+      if (cat === 'all' || pubCats.indexOf(cat) !== -1) {
+        pub.style.removeProperty('display');
+        pub.hidden = false;
+      } else {
+        pub.style.setProperty('display', 'none', 'important');
+        pub.hidden = true;
+      }
+    });
+  }, true);
+});
+</script>
 </body></html>
